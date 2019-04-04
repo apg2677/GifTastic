@@ -23,12 +23,24 @@ function Initialize() {
 
 function GetTopic() {
     var choice = $(this).attr("data-name");
-    var requestUrl = "http://api.giphy.com/v1/gifs/search?q=" + choice + "&api_key=L6xowQE91UNaYXFSoXvO5mEkxcG0Y3Tn&limit=5";
+    var requestUrl = "https://api.giphy.com/v1/gifs/search?q=" + choice + "&api_key=L6xowQE91UNaYXFSoXvO5mEkxcG0Y3Tn&limit=5";
     $.ajax({
         url: requestUrl,
         method:"GET"
     }).then(function(response) {
         console.log(response);
+        
         // $("#gif-view").text(JSON.stringify(response));
+        RenderGifs(response);
     });
+}
+
+function RenderGifs(res) {
+    for (var i=0;i<5;i++) {
+        console.log(res.data[i].images.preview_gif);
+        var tempGif = $("<img>");
+        tempGif.attr("src", res.data[i].images.preview_gif.url);
+        $("#gif-view").append(tempGif);
+    }
+
 }
