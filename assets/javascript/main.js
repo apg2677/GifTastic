@@ -69,9 +69,16 @@ function RenderGifs(res) {
         tempGif.attr("data-animate", res.data[i].images.fixed_height.url);
         tempGif.attr("src", res.data[i].images.fixed_height_still.url );
         tempGif.click(GiphyClick);
-
+        var card = $("<div class=\"card\">");
+        
+        var cardBody = $("<div class=\"card-body\">");
+        var cardTitle = $("<div class=\"card-title\">");
+        cardTitle.text(res.data[i].rating);
+        card.append(cardBody);
+        card.append(cardTitle);
+        card.append(tempGif);
     
-        $("#gif-view").prepend(tempGif);
+        $("#gif-view").prepend(card);
     }
 
 }
