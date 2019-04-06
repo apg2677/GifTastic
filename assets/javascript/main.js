@@ -74,9 +74,12 @@ function RenderGifs(res) {
         var cardBody = $("<div class=\"card-body\">");
         var cardTitle = $("<div class=\"card-title\">");
         cardTitle.text(res.data[i].rating);
+        
+        cardBody.append(cardTitle);
+        cardBody.append(tempGif);
+       
         card.append(cardBody);
-        card.append(cardTitle);
-        card.append(tempGif);
+        
     
         $("#gif-view").prepend(card);
     }

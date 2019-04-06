@@ -2,3 +2,19 @@ img {
     width:200px;
     height:200px;
 }
+
+.card-body {
+ 
+
+}
+.card {
+    border:1px solid black;
+    border-radius:4px;
+    padding:5px;
+}
+
+.card-title {
+    border:1px solid black;
+    border-radius:4px;
+    padding:5px;
+}
