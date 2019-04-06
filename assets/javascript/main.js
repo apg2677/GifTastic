@@ -11,7 +11,7 @@ function RenderButtons() {
         var tempButton = $("<button>");
         tempButton.attr("data-name", topics[i]);
         tempButton.attr("data-state", still);
-        tempButton.attr("class", "topic");
+        tempButton.attr("class", "topic btn btn-info");
         tempButton.text(topics[i]);
         $("#buttons").append(tempButton);
     }
@@ -63,6 +63,8 @@ const GiphyClick = function () {
 function RenderGifs(res) {
     for (var i = 0; i < 10; i++) {
         // console.log(res.data[i].images.preview_gif);
+        
+        var column = $("<div class=\"col-md-3\">");
         var tempGif = $("<img>");
         tempGif.attr("class", "giphy");
         tempGif.attr("data-still", res.data[i].images.fixed_height_still.url);
@@ -79,9 +81,9 @@ function RenderGifs(res) {
         cardBody.append(tempGif);
        
         card.append(cardBody);
-        
+        column.append(card);
     
-        $("#gif-view").prepend(card);
+        $("#gif-view").prepend(column);
     }
 
 }
@@ -95,7 +97,7 @@ function AddButton() {
     // RenderButtons();
     var tempButton = $("<button>");
         tempButton.attr("data-name", newTopic);
-        tempButton.attr("class", "topic");
+        tempButton.attr("class", "topic btn btn-info");
         tempButton.text(newTopic);
         $("#buttons").append(tempButton);
         $(".topic").click(GetTopic);
