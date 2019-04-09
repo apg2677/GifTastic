@@ -10,9 +10,9 @@
 * When the user clicks on a button gifs will be displayed in still mode
 * If the user clicks on a gif it will animate 
     * if the user clicks on it again it will become still
-    
 
-## When a user clicks on a button ten animated gifs will pop up and allow the user to choose from them.  When the user clicks on a gif it will start to animate it.  If the user clicks it again then it will stop the animation.
+
+
 
 
 ##### ** Be advised ** * the rating is displayed at the top instead of the bottom like in the specs *
